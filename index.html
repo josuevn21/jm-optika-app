@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta J&M Óptika - Colaboración Digital ✨ AI</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#b784cc',
+                            dark: '#9d6bb2',
+                            light: '#e9d5f2',
+                            50: '#fcfaff'
+                        },
+                        neutral: {
+                            50: '#fdfbf9',
+                            100: '#f7f3f0',
+                            200: '#ece4de',
+                            800: '#4a4440',
+                            900: '#2d2a28'
+                        },
+                    },
+                    fontFamily: {
+                        display: ['"Spline Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Spline Sans', sans-serif;
+            background-color: #fdfbf9;
+            color: #2d2a28;
+        }
+        
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+            height: 45vh;
+            min-height: 300px;
+            max-height: 450px;
+        }
+        
+        .chart-container-small {
+            position: relative;
+            width: 100%;
+            max-width: 450px;
+            margin: auto;
+            height: 35vh;
+            min-height: 250px;
+        }
+
+        .tab-active {
+            background-color: #ffffff;
+            box-shadow: 0 4px 20px -2px rgba(183, 132, 204, 0.1);
+            border-color: #e9d5f2;
+            color: #b784cc;
+        }
+
+        .ai-glow {
+            box-shadow: 0 0 15px rgba(183, 132, 204, 0.3);
+            border: 1px solid rgba(183, 132, 204, 0.5);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="sticky top-0 z-50 bg-neutral-50/80 backdrop-blur-md border-b border-neutral-200">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex justify-between items-center">
+            <div class="flex items-center gap-2 text-primary-dark">
+                <span class="material-symbols-outlined">auto_awesome</span>
+                <span class="font-bold text-lg">J&M Óptika ✨</span>
+            </div>
+            <div class="flex gap-6 text-sm font-medium text-neutral-800">
+                <a href="#vision" class="hover:text-primary transition-colors">Visión</a>
+                <a href="#ia-demo" class="hover:text-primary transition-colors">Innovación</a>
+                <a href="#tiempos" class="hover:text-primary transition-colors">Tiempos</a>
+                <a href="#inversion" class="text-primary-dark font-bold underline underline-offset-4">Inversión</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="vision" class="py-20 max-w-4xl mx-auto px-6 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-neutral-900 mb-6 leading-tight">
+            Digitalizando la esencia de <br>
+            <span class="text-primary-dark">J&M Óptika</span>
+        </h1>
+        <p class="text-lg text-neutral-800 leading-relaxed">
+            He preparado este resumen para que revisemos juntos cómo podemos llevar la óptica al siguiente nivel. El objetivo es que la tecnología no sea un obstáculo, sino un puente que haga la experiencia de tus clientes mucho más fluida y moderna.
+        </p>
+    </section>
+
+    <section id="detalles" class="py-16 bg-neutral-100 rounded-[2.5rem] mx-4">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-2xl font-bold mb-10 text-center">Ventajas Competitivas</h2>
+            
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button onclick="switchTab(0)" class="tab-btn px-6 py-3 rounded-full border border-transparent font-medium transition-all flex items-center gap-2 text-neutral-800">
+                    <span class="material-symbols-outlined text-xl">view_in_ar</span> Probador Virtual
+                </button>
+                <button onclick="switchTab(1)" class="tab-btn px-6 py-3 rounded-full border border-transparent font-medium transition-all flex items-center gap-2 text-neutral-800">
+                    <span class="material-symbols-outlined text-xl">auto_awesome</span> Inteligencia AI
+                </button>
+                <button onclick="switchTab(2)" class="tab-btn px-6 py-3 rounded-full border border-transparent font-medium transition-all flex items-center gap-2 text-neutral-800">
+                    <span class="material-symbols-outlined text-xl">clinical_notes</span> Salud Visual
+                </button>
+            </div>
+
+            <div id="tab-content" class="bg-white p-8 md:p-12 rounded-[2rem] border border-neutral-200 shadow-sm min-h-[300px] transition-all duration-300">
+                </div>
+        </div>
+    </section>
+
+    <section id="ia-demo" class="py-24 max-w-5xl mx-auto px-6">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4">Innovación con ✨ Gemini AI</h2>
+            <p class="text-neutral-800 max-w-2xl mx-auto">
+                He integrado ejemplos de cómo la IA de Google puede actuar como un asistente experto dentro de la aplicación, elevando el prestigio de tu servicio.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white p-8 rounded-[2rem] border border-neutral-200 shadow-sm ai-glow">
+                <div class="flex items-center gap-3 mb-6 text-primary-dark">
+                    <span class="material-symbols-outlined">face_retouching_natural</span>
+                    <h3 class="text-xl font-bold">Asistente de Estilo AI ✨</h3>
+                </div>
+                <p class="text-sm text-neutral-600 mb-4">Recomendaciones personalizadas basadas en el estilo del cliente.</p>
+                <textarea id="style-input" class="w-full p-4 bg-neutral-50 rounded-xl border border-neutral-200 text-sm focus:ring-primary outline-none" rows="3" placeholder="Ej: Busco lentes que me hagan ver profesional pero moderno..."></textarea>
+                <button onclick="askGeminiStyle()" id="style-btn" class="mt-4 w-full bg-primary text-white py-3 rounded-xl font-bold hover:bg-primary-dark transition-all">Sugerir Estilo ✨</button>
+                <div id="style-result" class="mt-6 text-sm text-neutral-800 hidden bg-primary-50 p-4 rounded-xl border border-primary-light italic"></div>
+            </div>
+
+            <div class="bg-white p-8 rounded-[2rem] border border-neutral-200 shadow-sm ai-glow">
+                <div class="flex items-center gap-3 mb-6 text-primary-dark">
+                    <span class="material-symbols-outlined">description</span>
+                    <h3 class="text-xl font-bold">Explicador de Recetas AI ✨</h3>
+                </div>
+                <p class="text-sm text-neutral-600 mb-4">Traduce términos médicos complejos a lenguaje sencillo.</p>
+                <div class="flex gap-2 mb-4">
+                    <input type="text" id="rx-sph" class="w-full p-3 bg-neutral-50 rounded-lg border border-neutral-200 text-xs text-center" placeholder="SPH">
+                    <input type="text" id="rx-cyl" class="w-full p-3 bg-neutral-50 rounded-lg border border-neutral-200 text-xs text-center" placeholder="CYL">
+                    <input type="text" id="rx-axis" class="w-full p-3 bg-neutral-50 rounded-lg border border-neutral-200 text-xs text-center" placeholder="AXIS">
+                </div>
+                <button onclick="askGeminiHealth()" id="health-btn" class="w-full bg-neutral-900 text-white py-3 rounded-xl font-bold hover:bg-black transition-all">Explicar Receta ✨</button>
+                <div id="health-result" class="mt-6 text-sm text-neutral-800 hidden bg-neutral-100 p-4 rounded-xl border border-neutral-200 italic"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tiempos" class="py-24 max-w-5xl mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-8">Cronograma Estratégico</h2>
+        <p class="text-neutral-800 mb-12">
+            He proyectado un calendario de **30 semanas** para trabajar con calma y asegurar que cada detalle, desde el probador AR hasta la IA, funcione perfectamente.
+        </p>
+        <div class="bg-white border border-neutral-200 rounded-[2rem] p-6 shadow-sm">
+            <div class="chart-container">
+                <canvas id="timelineChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <section id="inversion" class="py-24 bg-neutral-900 text-neutral-100 rounded-t-[3rem]">
+        <div class="max-w-5xl mx-auto px-6 flex flex-col lg:flex-row gap-16 items-center">
+            <div class="lg:w-1/2">
+                <h2 class="text-3xl font-bold mb-6">Resumen de la Inversión</h2>
+                <p class="text-neutral-400 mb-10">Un presupuesto ajustado y justo para garantizar la rentabilidad mutua y un producto de alta calidad.</p>
+                <div class="bg-neutral-800 p-8 rounded-3xl border border-neutral-700">
+                    <p class="text-xs uppercase tracking-widest text-primary mb-2 font-bold">Rango Total Estimado</p>
+                    <h3 class="text-4xl font-black mb-4">$93,000 - $140,000 <span class="text-lg font-normal">MXN</span></h3>
+                    <p class="text-sm text-neutral-400 italic leading-relaxed">
+                        Este monto cubre el desarrollo completo, la integración de Realidad Aumentada y las funciones de Inteligencia Artificial Gemini ✨.
+                    </p>
+                </div>
+            </div>
+            <div class="lg:w-1/2 w-full">
+                <div class="chart-container-small">
+                    <canvas id="budgetChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-16 text-center">
+        <p class="text-neutral-400 text-xs font-semibold tracking-widest uppercase">J&M Óptika x Desarrollo Profesional • 2026</p>
+    </footer>
+
+    <script>
+        // --- GEMINI API LOGIC ---
+        const apiKey = ""; // Espacio para tu API Key de Google AI Studio
+        const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+
+        async function callGemini(prompt) {
+            try {
+                if (!apiKey) return "Simulación: Gemini explicaría esto detalladamente si la API Key estuviera activa.";
+                const response = await fetch(geminiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        contents: [{ parts: [{ text: prompt }] }],
+                        systemInstruction: { parts: [{ text: "Responde como un amable asesor de J&M Óptika." }] }
+                    })
+                });
+                const data = await response.json();
+                return data.candidates?.[0]?.content?.parts?.[0]?.text || "No se pudo procesar.";
+            } catch (e) { return "Error de conexión con la IA."; }
+        }
+
+        async function askGeminiStyle() {
+            const input = document.getElementById('style-input').value;
+            const res = document.getElementById('style-result');
+            if(!input) return;
+            res.classList.remove('hidden'); res.innerHTML = "Analizando tu estilo ✨...";
+            const ans = await callGemini(`Sugerencia de lentes para: ${input}`);
+            res.innerHTML = `✨ <strong>Sugerencia:</strong> ${ans}`;
+        }
+
+        async function askGeminiHealth() {
+            const sph = document.getElementById('rx-sph').value;
+            const res = document.getElementById('health-result');
+            if(!sph) return;
+            res.classList.remove('hidden'); res.innerHTML = "Traduciendo términos médicos ✨...";
+            const ans = await callGemini(`Explica esta graduación: SPH ${sph}`);
+            res.innerHTML = `✨ <strong>Explicación:</strong> ${ans}`;
+        }
+
+        // --- TABS & CHARTS ---
+        const modules = [
+            { title: 'Probador Virtual (AR)', desc: 'Es la joya tecnológica. Permite que tus clientes se vean con los lentes puestos usando su propia cámara. Genera confianza y reduce el tiempo de decisión en sucursal.', impact: 'Diferenciador tecnológico único.' },
+            { title: 'Asistencia Inteligente ✨', desc: 'Con Gemini AI, la app asesora en moda y explica recetas médicas. Un servicio experto disponible las 24 horas del día.', impact: 'Modernidad y prestigio para la marca.' },
+            { title: 'Salud Visual Integrada', desc: 'Historial médico digital y recordatorios de citas. Creamos una relación a largo plazo con el paciente, no solo una venta de lentes.', impact: 'Fidelización y clientes recurrentes.' }
+        ];
+
+        window.switchTab = (idx) => {
+            const mod = modules[idx];
+            const content = document.getElementById('tab-content');
+            content.style.opacity = '0';
+            setTimeout(() => {
+                content.innerHTML = `
+                    <h3 class="text-2xl font-bold mb-4">${mod.title}</h3>
+                    <p class="text-neutral-800 text-lg leading-relaxed mb-6">${mod.desc}</p>
+                    <div class="flex items-center gap-2 text-primary-dark font-bold text-sm uppercase">
+                        <span class="material-symbols-outlined">trending_up</span> ${mod.impact}
+                    </div>
+                `;
+                content.style.opacity = '1';
+            }, 200);
+            document.querySelectorAll('.tab-btn').forEach((b, i) => i === idx ? b.classList.add('tab-active') : b.classList.remove('tab-active'));
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            switchTab(0);
+            Chart.defaults.font.family = "'Spline Sans', sans-serif";
+
+            new Chart(document.getElementById('timelineChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Estrategia y Diseño', 'Estructura de la App', 'Motor AR e Inteligencia ✨', 'Gestión Médica', 'Pruebas y Lanzamiento'],
+                    datasets: [{
+                        data: [[0, 6], [6, 12], [12, 22], [22, 26], [26, 30]],
+                        backgroundColor: ['#e9d5f2', '#b784cc', '#9d6bb2', '#4a4440', '#b784cc'],
+                        borderRadius: 15, barPercentage: 0.5
+                    }]
+                },
+                options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+            });
+
+            new Chart(document.getElementById('budgetChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['Diseño & UX', 'AR & AI ✨', 'Salud & Backend', 'Gestión'],
+                    datasets: [{
+                        data: [20, 45, 25, 10],
+                        backgroundColor: ['#e9d5f2', '#b784cc', '#9d6bb2', '#ece4de'],
+                        borderWidth: 0
+                    }]
+                },
+                options: { responsive: true, maintainAspectRatio: false, cutout: '75%', plugins: { legend: { position: 'bottom', labels: { color: '#f7f3f0' } } } }
+            });
+        });
+    </script>
+</body>
+</html>
