@@ -84,7 +84,7 @@
         <div class="max-w-5xl mx-auto px-6 h-16 flex justify-between items-center">
             <div class="flex items-center gap-2 text-primary-dark">
                 <span class="material-symbols-outlined">auto_awesome</span>
-                <span class="font-bold text-lg">J&M Óptika IA</span>
+                <span class="font-bold text-lg">J&M Óptika ✨</span>
             </div>
             <div class="flex gap-6 text-sm font-medium text-neutral-800">
                 <a href="#vision" class="hover:text-primary transition-colors">Visión</a>
@@ -138,9 +138,10 @@
             <div class="bg-white p-8 rounded-[2rem] border border-neutral-200 shadow-sm ai-glow">
                 <div class="flex items-center gap-3 mb-6 text-primary-dark">
                     <span class="material-symbols-outlined">face_retouching_natural</span>
-                    <h3 class="text-xl font-bold">Asesor de Estilo con IA</h3>
+                    <h3 class="text-xl font-bold">Asesor de Estilo con IA ✨</h3>
                 </div>
-                <textarea id="style-input" class="w-full p-4 bg-neutral-50 rounded-xl border border-neutral-200 text-sm focus:ring-primary outline-none" rows="3" placeholder="Ej: Soy mujer, busco lentes que resalten mi rostro cuadrado..."></textarea>
+                <p class="text-xs text-neutral-500 mb-4">Recomendaciones basadas en fisonomía y tendencias.</p>
+                <textarea id="style-input" class="w-full p-4 bg-neutral-50 rounded-xl border border-neutral-200 text-sm focus:ring-primary outline-none" rows="3" placeholder="Ej: Busco un estilo profesional pero con un toque moderno..."></textarea>
                 <button onclick="askAIStyle()" id="style-btn" class="mt-4 w-full bg-primary text-white py-3 rounded-xl font-bold hover:bg-primary-dark transition-all">Sugerir Estilo ✨</button>
                 <div id="style-result" class="mt-6 text-sm text-neutral-800 hidden bg-primary-50 p-4 rounded-xl border border-primary-light italic"></div>
             </div>
@@ -148,8 +149,9 @@
             <div class="bg-white p-8 rounded-[2rem] border border-neutral-200 shadow-sm ai-glow">
                 <div class="flex items-center gap-3 mb-6 text-primary-dark">
                     <span class="material-symbols-outlined">description</span>
-                    <h3 class="text-xl font-bold">Traductor de Recetas (IA)</h3>
+                    <h3 class="text-xl font-bold">Traductor de Recetas ✨</h3>
                 </div>
+                <p class="text-xs text-neutral-500 mb-4">Claridad inmediata sobre el diagnóstico visual.</p>
                 <div class="flex gap-2 mb-4">
                     <input type="text" id="rx-sph" class="w-full p-3 bg-neutral-50 rounded-lg border border-neutral-200 text-xs text-center" placeholder="SPH">
                     <input type="text" id="rx-cyl" class="w-full p-3 bg-neutral-50 rounded-lg border border-neutral-200 text-xs text-center" placeholder="CYL">
@@ -161,8 +163,8 @@
     </section>
 
     <section id="tiempos" class="py-24 max-w-5xl mx-auto px-6">
-        <h2 class="text-3xl font-bold mb-4">Cronograma Detallado</h2>
-        <p class="text-neutral-800 mb-12">Proyección holgada de **30 semanas** para garantizar una integración impecable de la IA y el Probador Virtual.</p>
+        <h2 class="text-3xl font-bold mb-4">Cronograma del Proyecto</h2>
+        <p class="text-neutral-800 mb-12">Proyección de **30 semanas** para garantizar una ejecución impecable en cada módulo tecnológico.</p>
         <div class="bg-white border border-neutral-200 rounded-[2rem] p-6 shadow-sm">
             <div class="chart-container">
                 <canvas id="timelineChart"></canvas>
@@ -173,11 +175,15 @@
     <section id="inversion" class="py-24 bg-neutral-900 text-neutral-100 rounded-t-[3rem]">
         <div class="max-w-5xl mx-auto px-6 flex flex-col lg:flex-row gap-16 items-center">
             <div class="lg:w-1/2">
-                <h2 class="text-3xl font-bold mb-6">Inversión en Tecnología</h2>
+                <h2 class="text-3xl font-bold mb-6">Detalles de Inversión</h2>
                 <div class="bg-neutral-800 p-8 rounded-3xl border border-neutral-700">
-                    <p class="text-xs uppercase tracking-widest text-primary mb-2 font-bold">Presupuesto MXN</p>
-                    <h3 class="text-4xl font-black mb-4">$93,000 - $140,000</h3>
-                    <p class="text-sm text-neutral-400 italic">Este presupuesto cubre el desarrollo completo, el motor de IA y la implementación AR.</p>
+                    <p class="text-xs uppercase tracking-widest text-primary mb-2 font-bold">Presupuesto en MXN</p>
+                    <h3 class="text-4xl font-black mb-6">$93,000 - $140,000</h3>
+                    
+                    <div class="space-y-4 text-sm text-neutral-300 leading-relaxed border-t border-neutral-700 pt-6">
+                        <p><strong>Este presupuesto cubre el desarrollo completo y la puesta en marcha.</strong></p>
+                        <p class="italic text-neutral-400">Los costos de mantenimiento de servidores y licencias de terceros se facturarán por separado según se necesiten.</p>
+                    </div>
                 </div>
             </div>
             <div class="lg:w-1/2 w-full">
@@ -197,37 +203,33 @@
             Enviarme tus comentarios
         </button>
         <div class="mt-16 text-xs text-neutral-400 uppercase tracking-widest font-semibold">
-            J&M Óptika • Propuesta 2026
+            J&M Óptika • 2026
         </div>
     </section>
 
     <script>
-        // IA LOGIC (GENERAL)
+        // AI LOGIC
         async function askAIStyle() {
-            const input = document.getElementById('style-input').value;
             const res = document.getElementById('style-result');
-            if(!input) return;
             res.classList.remove('hidden'); res.innerHTML = "Analizando tu perfil con IA ✨...";
             setTimeout(() => {
-                res.innerHTML = `✨ <strong>Análisis de IA:</strong> Basado en tu descripción, recomendamos monturas estilo Aviador o Wayfarer con acabados en titanio para balancear tus facciones.`;
-            }, 1500);
+                res.innerHTML = `✨ <strong>Asesoría de IA:</strong> Basado en tu fisonomía, te sugerimos armazones estilo Architect (cuadrados) en acetato para resaltar tu mirada.`;
+            }, 1000);
         }
 
         async function askAIHealth() {
-            const sph = document.getElementById('rx-sph').value;
             const res = document.getElementById('health-result');
-            if(!sph) return;
             res.classList.remove('hidden'); res.innerHTML = "Traduciendo términos médicos ✨...";
             setTimeout(() => {
-                res.innerHTML = `✨ <strong>Explicación IA:</strong> Una graduación de ${sph} indica una corrección leve para miopía. Nuestros lentes Blue-Light protegerán tu visión frente a pantallas.`;
-            }, 1500);
+                res.innerHTML = `✨ <strong>Explicación de IA:</strong> Tu graduación indica una leve miopía; con tus nuevos lentes notarás una nitidez total en distancias largas.`;
+            }, 1000);
         }
 
         // TABS
         const modules = [
-            { title: 'Probador Virtual AR', desc: 'Permite probarse lentes en tiempo real desde el celular. Aumenta la confianza del cliente y reduce el tiempo de decisión.' },
-            { title: 'Inteligencia Artificial', desc: 'Sugerencias inteligentes basadas en el tipo de rostro y tendencias de moda actuales, actuando como un asesor 24/7.' },
-            { title: 'Salud Visual Digital', desc: 'Un espacio seguro para que el paciente consulte su receta y reciba recordatorios preventivos de salud ocular.' }
+            { title: 'Probador Virtual AR', desc: 'Permite que tus clientes elijan sus lentes desde casa usando su cámara. Una herramienta interactiva que reduce la fricción de compra.' },
+            { title: 'Inteligencia Artificial', desc: 'Asesoría experta en estilo y salud disponible 24/7. La IA traduce tecnicismos y sugiere productos personalizados.' },
+            { title: 'Salud Visual Digital', desc: 'Dashboard personal para consultar recetas y recibir recordatorios. Fidelizamos al paciente cuidando su visión a largo plazo.' }
         ];
 
         window.switchTab = (idx) => {
@@ -248,7 +250,7 @@
             new Chart(document.getElementById('timelineChart'), {
                 type: 'bar',
                 data: {
-                    labels: ['Fase 1: Diseño', 'Fase 2: Arquitectura', 'Fase 3: Desarrollo IA/AR', 'Fase 4: Backend', 'Fase 5: QA'],
+                    labels: ['Diseño y UX', 'Arquitectura Base', 'Desarrollo IA / AR', 'Backend Salud', 'Pruebas Finales'],
                     datasets: [{ data: [[0, 6], [6, 12], [12, 22], [22, 27], [27, 30]], backgroundColor: ['#e9d5f2', '#b784cc', '#9d6bb2', '#4a4440', '#b784cc'], borderRadius: 15, barPercentage: 0.5 }]
                 },
                 options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
@@ -257,7 +259,7 @@
             new Chart(document.getElementById('budgetChart'), {
                 type: 'doughnut',
                 data: {
-                    labels: ['Diseño', 'IA/AR Desarrollo', 'Backend Salud', 'Gestión'],
+                    labels: ['Diseño & UX', 'IA / AR Desarrollo', 'Salud & Backend', 'Gestión'],
                     datasets: [{ data: [20, 45, 25, 10], backgroundColor: ['#e9d5f2', '#b784cc', '#9d6bb2', '#ece4de'], borderWidth: 0 }]
                 },
                 options: { responsive: true, maintainAspectRatio: false, cutout: '75%', plugins: { legend: { position: 'bottom', labels: { color: '#f7f3f0' } } } }
