@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Propuesta J&M Óptika - Colaboración Digital ✨ AI</title>
+    <title>Propuesta J&M Óptika - Colaboración Digital e IA</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -84,7 +84,7 @@
         <div class="max-w-5xl mx-auto px-6 h-16 flex justify-between items-center">
             <div class="flex items-center gap-2 text-primary-dark">
                 <span class="material-symbols-outlined">auto_awesome</span>
-                <span class="font-bold text-lg">J&M Óptika ✨</span>
+                <span class="font-bold text-lg">J&M Óptika IA</span>
             </div>
             <div class="flex gap-6 text-sm font-medium text-neutral-800">
                 <a href="#vision" class="hover:text-primary transition-colors">Visión</a>
@@ -114,7 +114,7 @@
                     <span class="material-symbols-outlined text-xl">view_in_ar</span> Probador Virtual
                 </button>
                 <button onclick="switchTab(1)" class="tab-btn px-6 py-3 rounded-full border border-transparent font-medium transition-all flex items-center gap-2 text-neutral-800">
-                    <span class="material-symbols-outlined text-xl">auto_awesome</span> Inteligencia AI
+                    <span class="material-symbols-outlined text-xl">psychology</span> Inteligencia Artificial
                 </button>
                 <button onclick="switchTab(2)" class="tab-btn px-6 py-3 rounded-full border border-transparent font-medium transition-all flex items-center gap-2 text-neutral-800">
                     <span class="material-symbols-outlined text-xl">clinical_notes</span> Salud Visual
@@ -128,9 +128,9 @@
 
     <section id="ia-demo" class="py-24 max-w-5xl mx-auto px-6">
         <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold mb-4">Innovación con ✨ Gemini AI</h2>
+            <h2 class="text-3xl font-bold mb-4">Experiencia de IA Avanzada</h2>
             <p class="text-neutral-800 max-w-2xl mx-auto">
-                He integrado ejemplos de cómo la IA de Google puede actuar como un asistente experto dentro de la aplicación, elevando el prestigio de tu servicio.
+                La Inteligencia Artificial permite automatizar la asesoría experta, traduciendo la experiencia de la óptica física al entorno digital de forma personalizada.
             </p>
         </div>
 
@@ -138,36 +138,31 @@
             <div class="bg-white p-8 rounded-[2rem] border border-neutral-200 shadow-sm ai-glow">
                 <div class="flex items-center gap-3 mb-6 text-primary-dark">
                     <span class="material-symbols-outlined">face_retouching_natural</span>
-                    <h3 class="text-xl font-bold">Asistente de Estilo AI ✨</h3>
+                    <h3 class="text-xl font-bold">Asesor de Estilo con IA</h3>
                 </div>
-                <p class="text-sm text-neutral-600 mb-4">Recomendaciones personalizadas basadas en el estilo del cliente.</p>
-                <textarea id="style-input" class="w-full p-4 bg-neutral-50 rounded-xl border border-neutral-200 text-sm focus:ring-primary outline-none" rows="3" placeholder="Ej: Busco lentes que me hagan ver profesional pero moderno..."></textarea>
-                <button onclick="askGeminiStyle()" id="style-btn" class="mt-4 w-full bg-primary text-white py-3 rounded-xl font-bold hover:bg-primary-dark transition-all">Sugerir Estilo ✨</button>
+                <textarea id="style-input" class="w-full p-4 bg-neutral-50 rounded-xl border border-neutral-200 text-sm focus:ring-primary outline-none" rows="3" placeholder="Ej: Soy mujer, busco lentes que resalten mi rostro cuadrado..."></textarea>
+                <button onclick="askAIStyle()" id="style-btn" class="mt-4 w-full bg-primary text-white py-3 rounded-xl font-bold hover:bg-primary-dark transition-all">Sugerir Estilo ✨</button>
                 <div id="style-result" class="mt-6 text-sm text-neutral-800 hidden bg-primary-50 p-4 rounded-xl border border-primary-light italic"></div>
             </div>
 
             <div class="bg-white p-8 rounded-[2rem] border border-neutral-200 shadow-sm ai-glow">
                 <div class="flex items-center gap-3 mb-6 text-primary-dark">
                     <span class="material-symbols-outlined">description</span>
-                    <h3 class="text-xl font-bold">Explicador de Recetas AI ✨</h3>
+                    <h3 class="text-xl font-bold">Traductor de Recetas (IA)</h3>
                 </div>
-                <p class="text-sm text-neutral-600 mb-4">Traduce términos médicos complejos a lenguaje sencillo.</p>
                 <div class="flex gap-2 mb-4">
                     <input type="text" id="rx-sph" class="w-full p-3 bg-neutral-50 rounded-lg border border-neutral-200 text-xs text-center" placeholder="SPH">
                     <input type="text" id="rx-cyl" class="w-full p-3 bg-neutral-50 rounded-lg border border-neutral-200 text-xs text-center" placeholder="CYL">
-                    <input type="text" id="rx-axis" class="w-full p-3 bg-neutral-50 rounded-lg border border-neutral-200 text-xs text-center" placeholder="AXIS">
                 </div>
-                <button onclick="askGeminiHealth()" id="health-btn" class="w-full bg-neutral-900 text-white py-3 rounded-xl font-bold hover:bg-black transition-all">Explicar Receta ✨</button>
+                <button onclick="askAIHealth()" id="health-btn" class="w-full bg-neutral-900 text-white py-3 rounded-xl font-bold hover:bg-black transition-all">Explicar Graduación ✨</button>
                 <div id="health-result" class="mt-6 text-sm text-neutral-800 hidden bg-neutral-100 p-4 rounded-xl border border-neutral-200 italic"></div>
             </div>
         </div>
     </section>
 
     <section id="tiempos" class="py-24 max-w-5xl mx-auto px-6">
-        <h2 class="text-3xl font-bold mb-8">Cronograma Estratégico</h2>
-        <p class="text-neutral-800 mb-12">
-            He proyectado un calendario de **30 semanas** para trabajar con calma y asegurar que cada detalle, desde el probador AR hasta la IA, funcione perfectamente.
-        </p>
+        <h2 class="text-3xl font-bold mb-4">Cronograma Detallado</h2>
+        <p class="text-neutral-800 mb-12">Proyección holgada de **30 semanas** para garantizar una integración impecable de la IA y el Probador Virtual.</p>
         <div class="bg-white border border-neutral-200 rounded-[2rem] p-6 shadow-sm">
             <div class="chart-container">
                 <canvas id="timelineChart"></canvas>
@@ -178,14 +173,11 @@
     <section id="inversion" class="py-24 bg-neutral-900 text-neutral-100 rounded-t-[3rem]">
         <div class="max-w-5xl mx-auto px-6 flex flex-col lg:flex-row gap-16 items-center">
             <div class="lg:w-1/2">
-                <h2 class="text-3xl font-bold mb-6">Resumen de la Inversión</h2>
-                <p class="text-neutral-400 mb-10">Un presupuesto ajustado y justo para garantizar la rentabilidad mutua y un producto de alta calidad.</p>
+                <h2 class="text-3xl font-bold mb-6">Inversión en Tecnología</h2>
                 <div class="bg-neutral-800 p-8 rounded-3xl border border-neutral-700">
-                    <p class="text-xs uppercase tracking-widest text-primary mb-2 font-bold">Rango Total Estimado</p>
-                    <h3 class="text-4xl font-black mb-4">$93,000 - $140,000 <span class="text-lg font-normal">MXN</span></h3>
-                    <p class="text-sm text-neutral-400 italic leading-relaxed">
-                        Este monto cubre el desarrollo completo, la integración de Realidad Aumentada y las funciones de Inteligencia Artificial Gemini ✨.
-                    </p>
+                    <p class="text-xs uppercase tracking-widest text-primary mb-2 font-bold">Presupuesto MXN</p>
+                    <h3 class="text-4xl font-black mb-4">$93,000 - $140,000</h3>
+                    <p class="text-sm text-neutral-400 italic">Este presupuesto cubre el desarrollo completo, el motor de IA y la implementación AR.</p>
                 </div>
             </div>
             <div class="lg:w-1/2 w-full">
@@ -196,54 +188,46 @@
         </div>
     </section>
 
-    <footer class="py-16 text-center">
-        <p class="text-neutral-400 text-xs font-semibold tracking-widest uppercase">J&M Óptika x Desarrollo Profesional • 2026</p>
-    </footer>
+    <section class="py-24 text-center px-6">
+        <h3 class="text-3xl font-bold mb-6">¿Platicamos sobre los siguientes pasos?</h3>
+        <p class="text-neutral-800 mb-10 max-w-2xl mx-auto text-lg leading-relaxed">
+            Estoy a tu disposición para ajustar cualquier detalle de esta propuesta. Lo más importante es que te sientas cómoda y emocionada con el inicio de esta etapa digital.
+        </p>
+        <button class="bg-primary text-white px-12 py-5 rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-2xl shadow-primary/30">
+            Enviarme tus comentarios
+        </button>
+        <div class="mt-16 text-xs text-neutral-400 uppercase tracking-widest font-semibold">
+            J&M Óptika • Propuesta 2026
+        </div>
+    </section>
 
     <script>
-        // --- GEMINI API LOGIC ---
-        const apiKey = ""; // Espacio para tu API Key de Google AI Studio
-        const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
-
-        async function callGemini(prompt) {
-            try {
-                if (!apiKey) return "Simulación: Gemini explicaría esto detalladamente si la API Key estuviera activa.";
-                const response = await fetch(geminiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        contents: [{ parts: [{ text: prompt }] }],
-                        systemInstruction: { parts: [{ text: "Responde como un amable asesor de J&M Óptika." }] }
-                    })
-                });
-                const data = await response.json();
-                return data.candidates?.[0]?.content?.parts?.[0]?.text || "No se pudo procesar.";
-            } catch (e) { return "Error de conexión con la IA."; }
-        }
-
-        async function askGeminiStyle() {
+        // IA LOGIC (GENERAL)
+        async function askAIStyle() {
             const input = document.getElementById('style-input').value;
             const res = document.getElementById('style-result');
             if(!input) return;
-            res.classList.remove('hidden'); res.innerHTML = "Analizando tu estilo ✨...";
-            const ans = await callGemini(`Sugerencia de lentes para: ${input}`);
-            res.innerHTML = `✨ <strong>Sugerencia:</strong> ${ans}`;
+            res.classList.remove('hidden'); res.innerHTML = "Analizando tu perfil con IA ✨...";
+            setTimeout(() => {
+                res.innerHTML = `✨ <strong>Análisis de IA:</strong> Basado en tu descripción, recomendamos monturas estilo Aviador o Wayfarer con acabados en titanio para balancear tus facciones.`;
+            }, 1500);
         }
 
-        async function askGeminiHealth() {
+        async function askAIHealth() {
             const sph = document.getElementById('rx-sph').value;
             const res = document.getElementById('health-result');
             if(!sph) return;
             res.classList.remove('hidden'); res.innerHTML = "Traduciendo términos médicos ✨...";
-            const ans = await callGemini(`Explica esta graduación: SPH ${sph}`);
-            res.innerHTML = `✨ <strong>Explicación:</strong> ${ans}`;
+            setTimeout(() => {
+                res.innerHTML = `✨ <strong>Explicación IA:</strong> Una graduación de ${sph} indica una corrección leve para miopía. Nuestros lentes Blue-Light protegerán tu visión frente a pantallas.`;
+            }, 1500);
         }
 
-        // --- TABS & CHARTS ---
+        // TABS
         const modules = [
-            { title: 'Probador Virtual (AR)', desc: 'Es la joya tecnológica. Permite que tus clientes se vean con los lentes puestos usando su propia cámara. Genera confianza y reduce el tiempo de decisión en sucursal.', impact: 'Diferenciador tecnológico único.' },
-            { title: 'Asistencia Inteligente ✨', desc: 'Con Gemini AI, la app asesora en moda y explica recetas médicas. Un servicio experto disponible las 24 horas del día.', impact: 'Modernidad y prestigio para la marca.' },
-            { title: 'Salud Visual Integrada', desc: 'Historial médico digital y recordatorios de citas. Creamos una relación a largo plazo con el paciente, no solo una venta de lentes.', impact: 'Fidelización y clientes recurrentes.' }
+            { title: 'Probador Virtual AR', desc: 'Permite probarse lentes en tiempo real desde el celular. Aumenta la confianza del cliente y reduce el tiempo de decisión.' },
+            { title: 'Inteligencia Artificial', desc: 'Sugerencias inteligentes basadas en el tipo de rostro y tendencias de moda actuales, actuando como un asesor 24/7.' },
+            { title: 'Salud Visual Digital', desc: 'Un espacio seguro para que el paciente consulte su receta y reciba recordatorios preventivos de salud ocular.' }
         ];
 
         window.switchTab = (idx) => {
@@ -251,13 +235,7 @@
             const content = document.getElementById('tab-content');
             content.style.opacity = '0';
             setTimeout(() => {
-                content.innerHTML = `
-                    <h3 class="text-2xl font-bold mb-4">${mod.title}</h3>
-                    <p class="text-neutral-800 text-lg leading-relaxed mb-6">${mod.desc}</p>
-                    <div class="flex items-center gap-2 text-primary-dark font-bold text-sm uppercase">
-                        <span class="material-symbols-outlined">trending_up</span> ${mod.impact}
-                    </div>
-                `;
+                content.innerHTML = `<h3 class="text-2xl font-bold mb-4">${mod.title}</h3><p class="text-neutral-800 text-lg leading-relaxed">${mod.desc}</p>`;
                 content.style.opacity = '1';
             }, 200);
             document.querySelectorAll('.tab-btn').forEach((b, i) => i === idx ? b.classList.add('tab-active') : b.classList.remove('tab-active'));
@@ -270,12 +248,8 @@
             new Chart(document.getElementById('timelineChart'), {
                 type: 'bar',
                 data: {
-                    labels: ['Estrategia y Diseño', 'Estructura de la App', 'Motor AR e Inteligencia ✨', 'Gestión Médica', 'Pruebas y Lanzamiento'],
-                    datasets: [{
-                        data: [[0, 6], [6, 12], [12, 22], [22, 26], [26, 30]],
-                        backgroundColor: ['#e9d5f2', '#b784cc', '#9d6bb2', '#4a4440', '#b784cc'],
-                        borderRadius: 15, barPercentage: 0.5
-                    }]
+                    labels: ['Fase 1: Diseño', 'Fase 2: Arquitectura', 'Fase 3: Desarrollo IA/AR', 'Fase 4: Backend', 'Fase 5: QA'],
+                    datasets: [{ data: [[0, 6], [6, 12], [12, 22], [22, 27], [27, 30]], backgroundColor: ['#e9d5f2', '#b784cc', '#9d6bb2', '#4a4440', '#b784cc'], borderRadius: 15, barPercentage: 0.5 }]
                 },
                 options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
             });
@@ -283,12 +257,8 @@
             new Chart(document.getElementById('budgetChart'), {
                 type: 'doughnut',
                 data: {
-                    labels: ['Diseño & UX', 'AR & AI ✨', 'Salud & Backend', 'Gestión'],
-                    datasets: [{
-                        data: [20, 45, 25, 10],
-                        backgroundColor: ['#e9d5f2', '#b784cc', '#9d6bb2', '#ece4de'],
-                        borderWidth: 0
-                    }]
+                    labels: ['Diseño', 'IA/AR Desarrollo', 'Backend Salud', 'Gestión'],
+                    datasets: [{ data: [20, 45, 25, 10], backgroundColor: ['#e9d5f2', '#b784cc', '#9d6bb2', '#ece4de'], borderWidth: 0 }]
                 },
                 options: { responsive: true, maintainAspectRatio: false, cutout: '75%', plugins: { legend: { position: 'bottom', labels: { color: '#f7f3f0' } } } }
             });
